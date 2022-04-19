@@ -1,0 +1,105 @@
+@import "/src/index.scss";
+
+.add-post {
+    padding: 1.5rem 2rem;
+    margin-bottom: 3rem;
+
+    background-color: $secondary;
+    box-shadow: 0 15px 25px rgba($black, 0.45);
+    border-radius: 5px;
+
+    @include breakpoint($mobile-bp) {
+        padding: 1.5rem;
+    }
+}
+
+.add-post_form {
+    display: flex;
+    align-items: flex-end;
+}
+
+.add-post_textarea {
+    display: block;
+    flex-grow: 1;
+    height: 34px;
+
+    @include breakpoint($mobile-bp) {
+        height: 30px;
+    }
+
+    overflow: hidden;
+
+    border: none;
+    background: transparent;
+    resize: none;
+
+    font-family: inherit;
+    color: $white;
+    font-size: 1.5rem;
+
+    &::placeholder {
+        color: #d2d2d2;
+    }
+}
+
+.add-post_form_actions {
+    width: 12rem;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: flex-end;
+
+    @include breakpoint($mobile-bp) {
+        width: 9rem;
+    }
+}
+
+.add-post_file,
+.add-post_send {
+    display: block;
+    width: 4.4rem;
+    height: 4.4rem;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+
+    transition: background-color 0.2s linear;
+
+    @include breakpoint($mobile-bp) {
+        width: 3.4rem;
+        height: 3.4rem;
+    }
+}
+
+.add-post_file {
+    background: #EBEBEB url("../../../../public/images/add-photo.svg") center no-repeat;
+
+    input {
+        display: none;
+    }
+
+    &:hover {
+        background-color: darken(#cacaca, 5%);
+    }
+
+    @include breakpoint($mobile-bp) {
+        background-size: 18px;
+    }
+}
+
+.add-post_send {
+    margin-left: 1.5rem;
+
+    font-size: 0;
+    color: transparent;
+
+    background: $blue url("../../../../public/images/send.svg") center no-repeat;
+    background-color: $blue;
+
+    &:hover {
+        background-color: darken($blue, 5%);
+    }
+
+    @include breakpoint($mobile-bp) {
+        background-size: 15px;
+    }
+}

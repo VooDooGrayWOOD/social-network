@@ -1,0 +1,198 @@
+@import "/src/index.scss";
+
+.sidebar {
+    width: $sidebar-width;
+    height: 100vh;
+    background-color: $primary;
+    box-shadow: 5px 0 15px rgba(#050505, .1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: $z-index-sidebar;
+
+    @include breakpoint($tablet-bp) {
+        display: flex;
+        flex-direction: column;
+        height: calc(100vh - 4rem);
+        padding-bottom: 1.5rem;
+        overflow: auto;
+        
+        top: 4rem;
+
+        transform: translateX(-100%);
+        transition: transform .2s linear;
+
+        .show-sidebar & {
+            transform: translateX(0);
+        }
+    }
+}
+
+.sidebar_header {
+    height: 18rem;
+    background-color: $secondary;
+
+    img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    @include breakpoint($tablet-bp) {
+        height: 10rem;
+    }
+}
+
+.sidebar_content {
+    padding: 0 2rem;
+
+    @include breakpoint($tablet-bp) {
+    flex-grow: 1;
+    }
+}
+
+.sidebar_footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2rem;
+}
+
+.profile {
+    margin-top: -5rem;
+
+    @include breakpoint($tablet-bp) {
+        margin-top: -1rem;
+        position: relative;
+
+        border-bottom: 1px solid #1c1c1c;
+    }
+}
+
+.profile_avatar {
+    display: block;
+    width: 10rem;
+    height: 10rem;
+    margin: 0 auto 2rem;
+    position: relative;
+    border: 2px solid $white;
+    box-shadow: 0 7px 20px rgba(0, 0, 0, .25);
+    border-radius: 50%;
+
+    @include breakpoint($tablet-bp) {
+        width: 6.5rem;
+        height: 6.5rem;
+
+        margin-left: 0;
+        position: absolute;
+        left: 0;
+    }
+}
+.social {
+    display: flex;
+    justify-content: center;
+
+    @include breakpoint($tablet-bp) {
+        display: none;
+    }
+}
+
+.social_item {
+    margin: 0 .75rem;
+}
+
+.profile_header {
+    margin-bottom: 2rem;
+
+    text-align: center;
+
+    @include breakpoint($tablet-bp) {
+        padding-top: 2rem;
+        padding-left: 8rem;
+        text-align: left;
+    }
+}
+
+.profile_name {
+    font-size: 1.8rem;
+    
+    @include breakpoint($tablet-bp) {
+        font-size: 1.5rem;
+    }        
+}
+
+.profile_prof {
+    font-size: 1.4rem;
+    font-weight: 300;
+    color: #DEDEDE;
+
+    @include breakpoint($tablet-bp) {
+        font-size: 1.2rem;
+    }  
+    
+}
+
+.profile_text {
+    padding: 3rem 0;
+    margin: 3rem 0;
+    font-size: 1.2rem;
+    text-align: center;
+
+    border-top: 1px solid #1c1c1c;
+    border-bottom: 1px solid #1c1c1c;
+
+    @include breakpoint($tablet-bp) {
+        display: none;
+    }
+}
+
+.btn {
+    display: inline-block;
+    vertical-align: top;
+
+    background-color: $secondary;
+    border: none;
+    cursor: pointer;
+    padding: 1.12em 2.1em;
+    border-radius: 3em;
+
+    font-family: inherit;
+    font-size: 1.2rem;
+    line-height: 1.1;
+    font-weight: 500;
+    color: $white;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: none;
+    }
+
+    transition:  background-color .2s linear;
+
+    &--red {
+        background-color: $red;
+        box-shadow: 0 7px 17px -10px rgba($red, .3);
+
+        &:hover, &:focus {
+            background-color: darken($red, 10%);
+        }
+    }
+    
+    &--blue{
+        background-color: $blue;
+        box-shadow: 0 7px 17px -10px rgba($blue, .3);
+
+        &:hover, &:focus {
+            background-color: darken($blue, 10%);
+        }
+    }
+
+    &--rounded {
+        border-radius: 0.41em;
+    }
+
+    &--sm {
+        padding: 0.7em 1.25em;
+    }
+}
+

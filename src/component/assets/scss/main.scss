@@ -1,0 +1,13 @@
+@import "/src/index.scss";
+@import "./stories.scss";
+@import "./pagination.scss";
+@import "./container.scss";
+
+.main {
+    padding: 10rem 0 8rem $sidebar-width;
+
+    @include breakpoint($tablet-bp) {
+        padding: 7rem 0 5rem;
+    }
+
+}
