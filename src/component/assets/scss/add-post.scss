@@ -92,8 +92,7 @@
     font-size: 0;
     color: transparent;
 
-    background: $blue url("../../../../public/images/send.svg") center no-repeat;
-    background-color: $blue;
+    background: $blue url("../../../../public/images/send.svg") no-repeat center;
 
     &:hover {
         background-color: darken($blue, 5%);
